@@ -238,7 +238,7 @@ def crop_from_cam(ims, cam, pr):
 def find_cam(ims, samples, arg):
   clf = shift_net.NetClf(
     shift_params.cam_v1(shift_dur = (0.5+len(ims))/float(pr.fps)), 
-    '../results/nets/cam/net.tf-675000', gpu = arg.gpu)
+    'results/nets/cam/net.tf-675000', gpu = arg.gpu)
   [cam] = clf.predict_cam_resize(ims[None], samples[None])
   cam = np.abs(cam[0, :, :, :, 0])
   vis = heatmap(ims, cam, adapt = arg.adapt_cam_thresh, 
