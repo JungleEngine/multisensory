@@ -367,7 +367,7 @@ if __name__ == '__main__':
     arg.clip_dur = pr.vid_dur
   pr.input_rms = np.sqrt(0.1**2 + 0.1**2)
   print 'Spectrogram samples:', pr.spec_len
-  pr.model_path = '../results/nets/sep/%s/net.tf-%d' % (pr.name, pr.train_iters)
+  pr.model_path = 'results/nets/sep/%s/net.tf-%d' % (pr.name, pr.train_iters)
 
   if not os.path.exists(arg.vid_file):
     print 'Does not exist:', arg.vid_file
